@@ -1,0 +1,37 @@
+/*
+===========================================================
+ Data Warehouse Initialization Script
+===========================================================
+
+ Description:
+ - Check if DataWarehouse database exists
+ - Create DataWarehouse if it does not exist
+ - Switch to DataWarehouse database
+ - Create Bronze, Silver, and Gold schemas
+
+ Author : Bhumija Singh
+===========================================================
+*/
+
+-- Create DataWarehouse Database (if not exists)
+IF DB_ID('DataWarehouse') IS NULL
+BEGIN
+    CREATE DATABASE DataWarehouse;
+END
+GO
+
+-- Switch to DataWarehouse Database
+USE DataWarehouse;
+GO
+
+-- Create Bronze Layer Schema
+CREATE SCHEMA Bronze;
+GO
+
+-- Create Silver Layer Schema
+CREATE SCHEMA Silver;
+GO
+
+-- Create Gold Layer Schema
+CREATE SCHEMA Gold;
+GO
